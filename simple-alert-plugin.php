@@ -5,7 +5,7 @@
  * Plugin URI: http://askaryabbas.com
  * Description: This plugin will add functionality to display alert box based on selected post types.
  * Version: 1.0.0
- * Author: Askary
+ * Author: Askary Abbas
  * Author URI: http://askaryabbas.com
  * Text Domain: simple-alert-box
  */
