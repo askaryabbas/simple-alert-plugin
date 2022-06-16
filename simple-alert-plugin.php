@@ -10,31 +10,31 @@
  * Text Domain: simple-alert-box
  */
 // Exit if accessed directly.
-if ( !defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 // Plugin version.
-if ( !defined( 'SAB_VERSION' ) ) {
+if ( ! defined( 'SAB_VERSION' ) ) {
 	define( 'SAB_VERSION', '1.0.0' );
 }
 // Plugin Folder Path.
-if ( !defined( 'SAB_DIR' ) ) {
+if ( ! defined( 'SAB_DIR' ) ) {
 	define( 'SAB_PLUGIN_DIR', wp_normalize_path( plugin_dir_path( __FILE__ ) ) );
 }
 // Plugin Folder URL.
-if ( !defined( 'SAB_URL' ) ) {
+if ( ! defined( 'SAB_URL' ) ) {
 	define( 'SAB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 }
 // Plugin Root File.
-if ( !defined( 'SAB_FILE' ) ) {
+if ( ! defined( 'SAB_FILE' ) ) {
 	define( 'SAB_FILE', wp_normalize_path( __FILE__ ) );
 }
 // Plugin Text Domain
-if ( !defined( 'SAB_TEXT_DOMAIN' ) ) {
+if ( ! defined( 'SAB_TEXT_DOMAIN' ) ) {
 	define( 'SAB_TEXT_DOMAIN', 'simple-alert-box' );
 }
 
-if ( !class_exists( 'SAB_Init' ) ) :
+if ( ! class_exists( 'SAB_Init' ) ) :
 
 	/**
 	 * Main SAB_Init Class.
@@ -68,10 +68,11 @@ if ( !class_exists( 'SAB_Init' ) ) :
 			return self::$instance;
 		}
 
-		/*		 * ************************* Magic Methods ************************** */
+		/*       * ************************* Magic Methods ************************** */
 
 		/**
 		 * Constructor
+		 *
 		 * @since 1.0.0
 		 * @see SAB_Init::instance()
 		 */
@@ -89,7 +90,7 @@ if ( !class_exists( 'SAB_Init' ) ) :
 				'sab-functions.php',
 				'sab-filters.php',
 				'sab-scripts.php',
-				'sab-ajax.php'
+				'sab-ajax.php',
 			);
 			foreach ( $inc_files as $inc_file ) {
 				include_once SAB_PLUGIN_DIR . 'inc/' . $inc_file;

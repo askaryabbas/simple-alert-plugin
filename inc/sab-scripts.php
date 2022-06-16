@@ -1,13 +1,13 @@
 <?php
 
 // Exit if accessed directly.
-if ( !defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 /**
  * Class for enqueue styles and scripts.
  */
-if ( !class_exists( 'SAB_Scripts' ) ) {
+if ( ! class_exists( 'SAB_Scripts' ) ) {
 
 	class SAB_Scripts {
 
