@@ -1,6 +1,6 @@
 # Simple Alert Plugin
 
-This plugin will add functionality to display alert box based on selected post types.
+This plugin will add functionality to display alert box based on selected post type.
 
 
 ### Prerequisites
