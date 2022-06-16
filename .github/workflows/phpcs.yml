@@ -1,11 +1,20 @@
-- name: PHP_CodeSniffer Check with Annotations
-  # You may pin to the exact commit or the version.
-  # uses: chekalsky/phpcs-action@e269c2f264f400adcda7c6b24c8550302350d495
-  uses: chekalsky/phpcs-action@v1.2.0
-  with:
-    # Enable checking for warnings (-w)
-    enable_warnings: # optional, default is 
-    # Path to phpcs binary
-    phpcs_bin_path: # optional, default is phpcs
-    # Setting the installed standard paths
-    installed_paths: # optional, default is 
+on: pull_request
+name: Inspections
+jobs:
+  runPHPCSInspection:
+    name: PHPCS Code Review
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+    - name: Run PHPCS inspection
+      uses: docker://ghcr.io/rtcamp/action-phpcs-code-review:classroom
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SKIP_FOLDERS: "tests,.github"
+      with:
+        args: "WordPress,WordPress-Core,WordPress-Docs"
+    - name: Cleanup
+      if: ${{ always() }}
+      uses: rtCamp/action-cleanup@master
